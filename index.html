@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Student Management System</h1>
+      <p>Academic Record & Performance Dashboard</p>
+    </header>
+
+    <!-- Summary Stats -->
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Students</span>
+        <h2 id="totalStudents">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>Average CGPA</span>
+        <h2 id="avgCgpa">0.00</h2>
+      </div>
+    </section>
+
+    <!-- Add Student Form -->
+    <section class="card">
+      <h3>Add New Student</h3>
+      <form id="studentForm">
+        <div class="form-grid">
+          <input type="text" id="name" placeholder="Full Name (e.g., Rahul singh )" required />
+          <input type="text" id="rollNo" placeholder="Roll Number (e.g., BCA202601)" required />
+          <input type="text" id="course" placeholder="Course (e.g., BCA, B.Tech)" required />
+          <input type="number" id="cgpa" placeholder="CGPA (0 - 10)" step="0.01" min="0" max="10" required />
+        </div>
+        <button type="submit" class="btn-primary">Add Student</button>
+      </form>
+    </section>
+
+    <!-- Student List Table -->
+    <section class="card">
+      <div class="table-header">
+        <h3>Student Records</h3>
+        <input type="text" id="searchInput" placeholder="Search by name or roll no..." />
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Roll No</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>CGPA</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+<footer><p>Developed by Ajeet Choudhary | BCA Project</p></footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
